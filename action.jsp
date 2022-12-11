@@ -1,8 +1,4 @@
-<%-- 
-Mini Project 
-Yeo Ewe Wen 20DDT20F1016
-Ngu Ming Henn 20DDT20F1006
---%>
+
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="java.sql.*" %>
@@ -10,6 +6,8 @@ Ngu Ming Henn 20DDT20F1006
 <%!String url = "jdbc:mysql://localhost:3306/PSAS";%>
 <%!String user = "root";%>
 <%!String psw = "";%>
+
+<%--Get inputs from previous file--%>
 <%
 String ID = request.getParameter("ID");
 String Name = request.getParameter("Name");
@@ -30,6 +28,7 @@ if(ID != null){
     try {
         Class.forName(driverName);
         con = DriverManager.getConnection(url,user,psw);
+        <%--Update Database based on id--%>
         String sql="UPDATE PerantiSiswa SET ID=?, Name=?, IC=?, RegNum=?, Address=?, Edu_Institution=?, M_Name=?, M_IC=?, F_Name=?, F_IC=?, Income=?, Status=? WHERE id="+ID;
         ps = con.prepareStatement(sql);
         ps.setString(1,ID);
