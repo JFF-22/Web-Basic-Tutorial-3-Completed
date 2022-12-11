@@ -1,8 +1,3 @@
-/*
-Mini Project 
-Yeo Ewe Wen 20DDT20F1016
-Ngu Ming Henn 20DDT20F1006
- */
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -46,7 +41,7 @@ public class PSsearch extends HttpServlet {
             out.println("<a href='index.html'>Home</a>");
             out.println("<h2>Peranti Siswa Application Result</h2>");
            if (resultSet.next()){
-               String result  = resultSet.getString("Status");
+               String result  = resultSet.getString("Status"); // Retreive selected data from the database
                
                if (result.equals("Pending")){
                    out.println("Your Peranti Siswa application is still pending.");
