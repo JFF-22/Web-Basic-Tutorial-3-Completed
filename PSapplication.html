@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--
+Mini Project 
+Yeo Ewe Wen 20DDT20F1016
+Ngu Ming Henn 20DDT20F1006
+-->
+
+<html>
+    <head>
+        <title>PSAS | Application</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function verifyInput(){
+                var P_Name = document.applicaton.P_Name.value;
+                var P_IC = document.applicaton.P_IC.value;
+                var P_Registration_Number = document.applicaton.P_Registration_Number.value;
+                var P_Address = document.applicaton.P_Address.value;
+                var P_Education_Institution = document.applicaton.P_Education_Institution.value;
+                
+                var M_Name = document.applicaton.M_Name.value;
+                var M_IC = document.applicaton.M_IC.value;
+                var F_Name = document.applicaton.F_Name.value;
+                var F_IC = document.applicaton.F_IC.value;
+                var MF_Income = document.applicaton.MF_Income.value;
+
+                var num = /^[0-9]+$/;
+
+                if (P_Name.length === 0){
+                    alert("Please enter your name.");
+                    return false;
+                }
+                if (P_IC.length !== 12){
+                    alert("Please enter your IC number.");
+                    return false;
+                }
+                if (!P_IC.match(num)){
+                    alert("Please enter your IC number properly.");
+                    return false;
+                }
+                if (P_Registration_Number.length === 0){
+                    alert("Please enter your registraion number.");
+                    return false;
+                }
+                if (P_Address.length === 0){
+                    alert("Please enter your address.");
+                    return false;
+                }
+                if (P_Education_Institution.length === 0){
+                    alert("Please enter your education insituition.");
+                    return false;
+                }
+                
+                 if (M_Name.length === 0){
+                    alert("Please enter your mother name.");
+                    return false;
+                }
+                if (M_IC.length !== 12){
+                    alert("Please enter your mother IC number.");
+                    return false;
+                }
+                if (!M_IC.match(num)){
+                    alert("Please enter your mother IC number properly.");
+                    return false;
+                }
+                 if (F_Name.length === 0){
+                    alert("Please enter your father name.");
+                    return false;
+                }
+                if (F_IC.length !== 12){
+                    alert("Please enter your father IC number.");
+                    return false;
+                }
+                if (!F_IC.match(num)){
+                    alert("Please enter your father IC number properly.");
+                    return false;
+                }
+                 if (MF_Income.length === 0){
+                    alert("Please enter your family income.");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <a href="index.html">Home</a><br>
+        <h2>Peranti Siswa Application Form</h2>
+        <form action="PSapplication" name="applicaton" method="POST">
+            <table>
+                <tr>
+                    <td>Personal Information</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td> : </td>
+                    <td><input name="P_Name" type="text"></td>
+                </tr>
+                <tr>
+                    <td>IC Number</td>
+                    <td> : </td>
+                    <td><input name="P_IC" type="text" maxlength="12"></td>
+                </tr>
+                 <tr>
+                    <td>Registration Number</td>
+                    <td> : </td>
+                    <td><input name="P_Registration_Number" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Address<br><br><br><br></td>
+                    <td> : <br><br><br><br></td>
+                    <td><textarea name="P_Address" rows="5" cols="20"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Education Institution</td>
+                    <td> : </td>
+                    <td><input type="text" name="P_Education_Institution"></td>
+                </tr>
+                
+                <tr><td colspan="3"><br></td></tr>
+                <tr>
+                    <td colspan="3">Parent Information</td>
+                </tr>
+                <tr>
+                    <td>Mother Name</td>
+                    <td> : </td>
+                    <td><input name="M_Name" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Mother IC Number</td>
+                    <td> : </td>
+                    <td><input name="M_IC" type="text" maxlength="12"></td>
+                </tr>
+                 <tr>
+                    <td>Father Name</td>
+                    <td> : </td>
+                    <td><input name="F_Name" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Father IC Number</td>
+                    <td> : </td>
+                    <td><input name="F_IC" type="text" maxlength="12"></td>
+                </tr>
+                <tr>
+                    <td>Monthly Income (RM)</td>
+                    <td> : </td>
+                    <td><input name="MF_Income" type="number"></td>
+                </tr>
+                
+                <tr>
+                    <td colspan="3">
+                        <input type="submit" value="Apply" onclick="return(verifyInput())">
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
+

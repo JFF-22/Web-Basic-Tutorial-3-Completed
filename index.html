@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+Mini Project
+Yeo Ewe Wen 20DDT20F1016
+Ngu Ming Henn 20DDT20F1006
+-->
+<html>
+    <head>
+        <title>PSAS | Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function verifyInput(){
+                var IC = document.search.IC.value;
+
+                var num = /^[0-9]+$/;
+
+                if (IC.length !== 12){
+                    alert("Please enter your IC number.");
+                    return false;
+                }
+                if (!IC.match(num)){
+                    alert("Please enter your IC number properly.");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <a href="index.jsp">Administrator</a><br>
+        <a href="PSapplication.html">Click here to apply.</a>
+        <h2>Peranti Siswa Application System</h2>
+        <form action="PSsearch" name="search" method="POST">
+            <table>
+                <tr>
+                    <td>IC Number</td>
+                    <td> : </td>
+                    <td><input name="IC" type="text" maxlength="12"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input type="submit" value="Search" onclick="return(verifyInput())">
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
