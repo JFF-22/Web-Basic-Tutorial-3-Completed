@@ -1,8 +1,3 @@
-/*
-Mini Project 
-Yeo Ewe Wen 20DDT20F1016
-Ngu Ming Henn 20DDT20F1006
- */
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,6 +31,7 @@ public class PSapplication extends HttpServlet {
         response.setContentType("text/html;charset-UTF-8");
         PrintWriter out = response.getWriter();
         
+        // Get input from html web page
         String P_Name = request.getParameter("P_Name");
         String P_IC = request.getParameter("P_IC");
         String P_Registration_Number = request.getParameter("P_Registration_Number");
@@ -52,6 +48,9 @@ public class PSapplication extends HttpServlet {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/PSAS", "root", "");
             Statement st = con.createStatement();
 
+            // Insert new data into database
+            // PerantiSiswa is the example of table name
+            // Name, IC, etc is the example of column name
             int i = st.executeUpdate("INSERT INTO PerantiSiswa(Name, IC, RegNum, Address, Edu_Institution, M_Name, M_IC, F_Name, F_IC, Income, Status)"
                         + "values(' " + P_Name + " ',' " + P_IC + " ',' " + P_Registration_Number + " ',' " + P_Address + " ',' " + P_Education_Institution + " ',' " + M_Name  + " ',' " + 
                     M_IC + " ',' " + F_Name + " ',' " + F_IC  + " ',' " + MF_Income  +  " ','Pending') ");
